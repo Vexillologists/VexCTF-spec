@@ -2,7 +2,7 @@
 
 #### **Did you find a bug?**
 
-* **Do not open up a GitHub issue if the bug is a security vulnerability in VexCTF**. Instead send us the details as is described in our [security policy](https://github.com/Vexillologists/VexCTF/blob/master/SECURITY.md).
+* **Do not open up a GitHub issue if the bug is a security vulnerability in VexCTF**. Instead send us the details as is described in our [security policy](https://github.com/Vexillologists/VexCTF-spec/blob/master/SECURITY.md).
 
 * **Ensure the bug was not already reported** by searching on GitHub under [Issues](https://github.com/Vexillologists/VexCTF-spec/issues).
 
