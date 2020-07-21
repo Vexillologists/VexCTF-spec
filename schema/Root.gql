@@ -1,0 +1,22 @@
+# Unnamed CTF Platform
+# API Specification version 1.0.0
+schema {
+  query: Query,
+  mutation: Mutation
+}
+
+type Query {
+  """
+  Gets the current SemVer-compliant API version
+  """
+  apiVersion: String!
+}
+
+type Mutation {
+  """
+  This is just to please the linter.
+  Please ignore it and don't implement it.
+  Remove it when merging files.
+  """
+  ignoreMe: String!
+}
