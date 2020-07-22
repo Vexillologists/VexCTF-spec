@@ -7,7 +7,7 @@ title = "VexCTF Specification"
 description = "The (semi-)formal specifiation for VexCTF, a GraphQL-based API for CTF hosting."
 
 [build]
-create-missing = false
+create-missing = true
 
 [output.html]
 mathjax-support = true
