@@ -3,22 +3,31 @@ dist: xenial
 os: linux
 
 cache:
-- cargo
+  - cargo
 
 rust:
-- stable
+  - stable
 
 before_install:
-- openssl aes-256-cbc -K $encrypted_a11d45963b96_key -iv $encrypted_a11d45963b96_iv
-  -in dpl.key.enc -out dpl.key -d
+  - openssl aes-256-cbc -K $encrypted_a11d45963b96_key -iv $encrypted_a11d45963b96_iv
+    -in dpl.key.enc -out dpl.key -d
 
 before_script:
-- "(test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)"
-- (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
-- cargo install-update -a
+  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
+  - (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
+  - cargo install-update -a
+
+after_success:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh success $WEBHOOK_URL
+after_failure:
+  - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+  - chmod +x send.sh
+  - ./send.sh failure $WEBHOOK_URL
 
 script:
-- rm -rf book && mdbook build . && mdbook test .
+  - rm -rf book && mdbook build . && mdbook test .
 
 deploy:
   provider: pages
