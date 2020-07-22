@@ -3,9 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>VexCTF Specification</title>
-        
-        <meta name="robots" content="noindex" />
+        <title>Introduction - VexCTF Specification</title>
         
         
 
@@ -94,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><a href="contributing.html">Contributing</a></li><li class="chapter-item expanded affix "><a href="security.html">Security</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="overview/index.html"><strong aria-hidden="true">2.</strong> Overview</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="overview/graphql.html"><strong aria-hidden="true">2.1.</strong> GraphQL</a></li><li class="chapter-item expanded "><a href="overview/auth.html"><strong aria-hidden="true">2.2.</strong> Authentication</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html">About</a></li><li class="chapter-item expanded affix "><a href="contributing.html">Contributing</a></li><li class="chapter-item expanded affix "><a href="security.html">Security</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="introduction.html" class="active"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="overview/index.html"><strong aria-hidden="true">2.</strong> Overview</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="overview/graphql.html"><strong aria-hidden="true">2.1.</strong> GraphQL</a></li><li class="chapter-item expanded "><a href="overview/auth.html"><strong aria-hidden="true">2.2.</strong> Authentication</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -164,47 +162,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#vexctf-spec" id="vexctf-spec">VexCTF-spec</a></h1>
-<p>A WIP CTF platform, (semi-)formally specified.</p>
-<h2><a class="header" href="#licensing" id="licensing">Licensing</a></h2>
-<p>You are free to use this under the terms of the <a href="https://choosealicense.com/licenses/mit/">MIT License</a>, which you can see <a href="https://github.com/Vexillologists/VexCTF-spec/blob/master/LICENSE">here</a>.</p>
-<h2><a class="header" href="#how-to-contribute-to-vexctf" id="how-to-contribute-to-vexctf">How to contribute to VexCTF</a></h2>
-<h4><a class="header" href="#did-you-find-a-bug" id="did-you-find-a-bug"><strong>Did you find a bug?</strong></a></h4>
-<ul>
-<li>
-<p><strong>Do not open up a GitHub issue if the bug is a security vulnerability in VexCTF</strong>. Instead send us the details as is described in our <a href="https://github.com/Vexillologists/VexCTF-spec/blob/master/SECURITY.md">security policy</a>.</p>
-</li>
-<li>
-<p><strong>Ensure the bug was not already reported</strong> by searching on GitHub under <a href="https://github.com/Vexillologists/VexCTF-spec/issues">Issues</a>.</p>
-</li>
-<li>
-<p>If you’re unable to find an open issue addressing the problem, <a href="https://github.com/Vexillologists/VexCTF-spec/issues/new">open a new one</a>. Be sure to fill out the issue template with a <strong>title and clear description</strong>, and as much relevant information as possible (e.g. deployment setup, browser version, etc).</p>
-</li>
-</ul>
-<h4><a class="header" href="#did-you-write-a-patch-that-fixes-a-bug-or-implements-a-new-feature" id="did-you-write-a-patch-that-fixes-a-bug-or-implements-a-new-feature"><strong>Did you write a patch that fixes a bug or implements a new feature?</strong></a></h4>
-<ul>
-<li>
-<p>Open a new pull request with the patch.</p>
-</li>
-<li>
-<p>Ensure the PR description clearly describes the problem and solution. Include the relevant issue number if applicable.</p>
-</li>
-<li>
-<p>Ensure all status checks pass. PR’s with test failures will not be merged. PR’s with insufficient coverage may be merged depending on the situation.</p>
-</li>
-</ul>
-<h4><a class="header" href="#did-you-fix-whitespace-format-code-or-make-a-purely-cosmetic-patch" id="did-you-fix-whitespace-format-code-or-make-a-purely-cosmetic-patch"><strong>Did you fix whitespace, format code, or make a purely cosmetic patch?</strong></a></h4>
-<p>Changes that are cosmetic in nature and do not add anything substantial to the stability, functionality, or testability of VexCTF will sometimes not be accepted.</p>
-<h1><a class="header" href="#security-policy" id="security-policy">Security Policy</a></h1>
-<h2><a class="header" href="#supported-versions" id="supported-versions">Supported Versions</a></h2>
-<p>The following API versions are supported:</p>
-<table><thead><tr><th>Version</th><th>Supported</th></tr></thead><tbody>
-<tr><td>&gt;=1.0.0</td><td>✅</td></tr>
-</tbody></table>
-<h2><a class="header" href="#reporting-a-vulnerability" id="reporting-a-vulnerability">Reporting a Vulnerability</a></h2>
-<p>If you’ve found a vulnerability, please email <a href="mailto:vexctf@teamisotope.com"><code>vexctf@teamisotope.com</code></a>. We will discuss details and rewards
-once we have triaged and considered/fixed the issue.</p>
-<h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
+                        <h1><a class="header" href="#introduction" id="introduction">Introduction</a></h1>
 <p>This is the (semi-)formal specification for VexCTF, a CTF platform.</p>
 <h2><a class="header" href="#copyright" id="copyright">Copyright</a></h2>
 <p>VexCTF’s specification and associated code is licensed under the MIT license.</p>
@@ -215,47 +173,21 @@ once we have triaged and considered/fixed the issue.</p>
 <p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
 <h2><a class="header" href="#keywords" id="keywords">Keywords</a></h2>
 <p>The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in the normative portions of this document are to be interpreted as described in IETF RFC 2119. These key words may appear in lowercase and still retain their meaning unless explicitly declared as non‐normative.</p>
-<h1><a class="header" href="#overview" id="overview">Overview</a></h1>
-<p>This chapter will go over the general software architecture model of VexCTF, as well as various design practices.</p>
-<h1><a class="header" href="#graphql" id="graphql">GraphQL</a></h1>
-<p>VexCTF uses GraphQL for almost all API features. This is excluding some things like file upload which uses REST.</p>
-<h2><a class="header" href="#endpoint-requirements" id="endpoint-requirements">Endpoint Requirements</a></h2>
-<p>The following GraphQL endpoint(s) must be implemented: </p>
-<ul>
-<li><code>/graphql</code>: A GraphQL endpoint using HTTP <code>POST</code> requests.</li>
-</ul>
-<p>The request and response must be in JSON format and have a <code>Content-Type</code> header of <code>application/json</code>.</p>
-<p>Any further GraphQL endpoint(s) may be implemented as long as they do not conflict with existing endpoints.</p>
-<h2><a class="header" href="#graphql-feature-requirements" id="graphql-feature-requirements">GraphQL Feature Requirements</a></h2>
-<p>It is required that introspection must be enabled within the GraphQL implementation of choice.</p>
-<p>Any further GraphQL features are entirely optional.</p>
-<h2><a class="header" href="#recommendations" id="recommendations">Recommendations</a></h2>
-<p>It is recommended that a graphical interface for GraphQL (e.g. GraphiQL, GraphQL Playground, etc.) is implemented, as they highly aid in debugging. However, this is optional in production environments. In the case that one is implemented, it can be on any endpoint, as long as it does not conflict with existing endpoints.</p>
-<h1><a class="header" href="#authentication" id="authentication">Authentication</a></h1>
-<p>Authentication in VexCTF uses JSON Web Tokens (JWTs) as described in <a href="https://tools.ietf.org/html/rfc7519">RFC 7519</a>. </p>
-<p>Tokens should be passed by the <code>Authorization</code> header with type <code>Bearer</code> (in uppercase).
-For example:</p>
-<pre><code class="language-http">POST /graphql
-Authorization: Bearer eyJhbG...shortened for example...lRTcIeq6vlpAv0
-Content-Type: application/json
-</code></pre>
-<p>All GraphQL queries and mutations, as well as any REST APIs are assumed to require authentication, unless explicitly specified.</p>
-<h2><a class="header" href="#token-requirements" id="token-requirements">Token Requirements</a></h2>
-<p>The JWT session token must contain the following fields:</p>
-<ul>
-<li><code>exp</code>: The expiry timestamp as a UNIX timestamp in seconds.</li>
-<li><code>jti</code>: The internal session ID, in any form. This is usually used to allow server-side expiry/validity information and revokation.</li>
-<li><code>uid</code>: The user’s Node ID.</li>
-</ul>
-<p>The signature may be generated with any algorithm in the JWT specification, however it is recommended that any <code>HMACSHAnnn</code>-based (<code>HSnnn</code>) algorithm is used as they are typically more supported than others.</p>
-<p>Any other application-specific fields are allowed but a basic implementation will usually only need the required fields.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="security.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
+                        
+                            <a rel="next" href="overview/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -265,7 +197,15 @@ Content-Type: application/json
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="security.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
+                
+                    <a rel="next" href="overview/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
@@ -310,16 +250,6 @@ Content-Type: application/json
         <script type="text/javascript" src="src/fontawesome5kit.js"></script>
         
 
-        
-        
-        <script type="text/javascript">
-        window.addEventListener('load', function() {
-            MathJax.Hub.Register.StartupHook('End', function() {
-                window.setTimeout(window.print, 100);
-            });
-        });
-        </script>
-        
         
 
     </body>

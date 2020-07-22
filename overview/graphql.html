@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>About - VexCTF Specification</title>
+        <title>GraphQL - VexCTF Specification</title>
         
         
 
@@ -17,23 +17,23 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="favicon.svg">
-        <link rel="shortcut icon" href="favicon.png">
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -46,7 +46,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "coal";
         </script>
 
@@ -92,7 +92,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="about.html" class="active">About</a></li><li class="chapter-item expanded affix "><a href="contributing.html">Contributing</a></li><li class="chapter-item expanded affix "><a href="security.html">Security</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="overview/index.html"><strong aria-hidden="true">2.</strong> Overview</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="overview/graphql.html"><strong aria-hidden="true">2.1.</strong> GraphQL</a></li><li class="chapter-item expanded "><a href="overview/auth.html"><strong aria-hidden="true">2.2.</strong> Authentication</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../about.html">About</a></li><li class="chapter-item expanded affix "><a href="../contributing.html">Contributing</a></li><li class="chapter-item expanded affix "><a href="../security.html">Security</a></li><li class="spacer"></li><li class="chapter-item expanded "><a href="../introduction.html"><strong aria-hidden="true">1.</strong> Introduction</a></li><li class="chapter-item expanded "><a href="../overview/index.html"><strong aria-hidden="true">2.</strong> Overview</a><a class="toggle"><div>❱</div></a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../overview/graphql.html" class="active"><strong aria-hidden="true">2.1.</strong> GraphQL</a></li><li class="chapter-item expanded "><a href="../overview/auth.html"><strong aria-hidden="true">2.2.</strong> Authentication</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -127,7 +127,7 @@
                     <h1 class="menu-title">VexCTF Specification</h1>
 
                     <div class="right-buttons">
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
@@ -162,19 +162,33 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#vexctf-spec" id="vexctf-spec">VexCTF-spec</a></h1>
-<p>A WIP CTF platform, (semi-)formally specified.</p>
-<h2><a class="header" href="#licensing" id="licensing">Licensing</a></h2>
-<p>You are free to use this under the terms of the <a href="https://choosealicense.com/licenses/mit/">MIT License</a>, which you can see <a href="https://github.com/Vexillologists/VexCTF-spec/blob/master/LICENSE">here</a>.</p>
+                        <h1><a class="header" href="#graphql" id="graphql">GraphQL</a></h1>
+<p>VexCTF uses GraphQL for almost all API features. This is excluding some things like file upload which uses REST.</p>
+<h2><a class="header" href="#endpoint-requirements" id="endpoint-requirements">Endpoint Requirements</a></h2>
+<p>The following GraphQL endpoint(s) must be implemented: </p>
+<ul>
+<li><code>/graphql</code>: A GraphQL endpoint using HTTP <code>POST</code> requests.</li>
+</ul>
+<p>The request and response must be in JSON format and have a <code>Content-Type</code> header of <code>application/json</code>.</p>
+<p>Any further GraphQL endpoint(s) may be implemented as long as they do not conflict with existing endpoints.</p>
+<h2><a class="header" href="#graphql-feature-requirements" id="graphql-feature-requirements">GraphQL Feature Requirements</a></h2>
+<p>It is required that introspection must be enabled within the GraphQL implementation of choice.</p>
+<p>Any further GraphQL features are entirely optional.</p>
+<h2><a class="header" href="#recommendations" id="recommendations">Recommendations</a></h2>
+<p>It is recommended that a graphical interface for GraphQL (e.g. GraphiQL, GraphQL Playground, etc.) is implemented, as they highly aid in debugging. However, this is optional in production environments. In the case that one is implemented, it can be on any endpoint, as long as it does not conflict with existing endpoints.</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="../overview/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
-                            <a rel="next" href="contributing.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../overview/auth.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -186,9 +200,13 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="../overview/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
-                    <a rel="next" href="contributing.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../overview/auth.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -213,26 +231,26 @@
         
 
         
-        <script src="ace.js" type="text/javascript" charset="utf-8"></script>
-        <script src="editor.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mode-rust.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-dawn.js" type="text/javascript" charset="utf-8"></script>
-        <script src="theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../ace.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../editor.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mode-rust.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-dawn.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../theme-tomorrow_night.js" type="text/javascript" charset="utf-8"></script>
         
 
         
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
-        <script type="text/javascript" src="src/fontawesome5kit.js"></script>
+        <script type="text/javascript" src="../src/fontawesome5kit.js"></script>
         
 
         
