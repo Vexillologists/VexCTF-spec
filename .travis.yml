@@ -8,9 +8,6 @@ cache:
 rust:
   - stable
 
-before_install:
-  - openssl aes-256-cbc -K $encrypted_a11d45963b96_key -iv $encrypted_a11d45963b96_iv -in dpl.key.enc -out dpl.key -d
-
 before_script:
   - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
   - (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
@@ -22,11 +19,8 @@ script:
 deploy:
   provider: pages
   cleanup: false
-  deploy_key: ./dpl.key
+  token: $GITHUB_TOKEN
   local_dir: ./book
   keep_history: true
   edge: true
   target_branch: gh-pages
-  name: Travis CI
-  email: deploy@travis-ci.org
-  
