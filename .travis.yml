@@ -33,7 +33,7 @@ deploy:
   provider: pages
   cleanup: false
   deploy_key: "./dpl.key"
-  local_dir: "./book"
+  local_dir: "./out"
   keep_history: true
   edge: true
   target_branch: gh-pages
