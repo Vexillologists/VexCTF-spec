@@ -1,0 +1,25 @@
+{
+  "name": "VexCTF-spec",
+  "version": "1.0.0",
+  "description": "A WIP CTF platform, (semi-)formally specified.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Vexillologists/VexCTF-spec.git"
+  },
+  "contributors": [
+    "The Puzzlemaker <tpzker@thepuzzlemaker.info",
+    "Alec Petridis <alecthechop@protonmail.com",
+    "VexCTF Team <vexctf@teamisotope.com"
+  ],
+  "license": "MIT OR CC-BY-SA-4.0",
+  "private": true,
+  "scripts": {
+    "test": "spec-md src/VexCTF.md > /dev/null",
+    "build": "mkdir -p out; spec-md src/VexCTF.md > out/index.html",
+    "watch": "mkdir -p out; nodemon --exec 'spec-md src/VexCTF.md > out/index.html' --watch src --exec md"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "spec-md": "^1.1.1"
+  }
+}

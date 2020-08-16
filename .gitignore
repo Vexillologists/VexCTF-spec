@@ -1,3 +1,5 @@
+node_modules
 book
+out
 dpl.key
 *.key

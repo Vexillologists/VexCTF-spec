@@ -1,9 +1,9 @@
-language: rust
+language: node
 dist: xenial
 os: linux
 
 cache:
-  - cargo
+  - yarn
 
 rust:
   - stable
@@ -13,9 +13,7 @@ before_install:
     -in dpl.key.enc -out dpl.key -d
 
 before_script:
-  - (test -x $HOME/.cargo/bin/cargo-install-update || cargo install cargo-update)
-  - (test -x $HOME/.cargo/bin/mdbook || cargo install --vers "^0.3" mdbook)
-  - cargo install-update -a
+  - (test -x node_modules || yarn install)
 
 after_success:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
@@ -27,7 +25,7 @@ after_failure:
   - ./send.sh failure $WEBHOOK_URL
 
 script:
-  - rm -rf book && mdbook build . && mdbook test .
+  - rm -rf out && yarn build && yarn test
 
 deploy:
   provider: pages
