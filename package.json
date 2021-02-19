@@ -16,7 +16,7 @@
   "scripts": {
     "test": "spec-md src/VexCTF.md > /dev/null",
     "build": "mkdir -p out; spec-md src/VexCTF.md > out/index.html",
-    "watch": "mkdir -p out; nodemon --exec 'spec-md src/VexCTF.md > out/index.html' --watch src --exec md"
+    "watch": "mkdir -p out; nodemon --exec 'spec-md src/VexCTF.md > out/index.html' --watch src --ext md"
   },
   "devDependencies": {
     "nodemon": "^2.0.4",
